@@ -7,7 +7,7 @@ namespace Terminal_Engines
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             GameUtilities gameUtilities = new GameUtilities();
 
