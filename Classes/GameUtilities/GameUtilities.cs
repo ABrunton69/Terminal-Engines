@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terminal_Engines.Classes.Vehicles;
 
 namespace Terminal_Engines.Classes.ShopClasses
 {
@@ -33,6 +34,34 @@ namespace Terminal_Engines.Classes.ShopClasses
             AnsiConsole.MarkupLine("[green]All engines are go![/]");
             Thread.Sleep(1000);
             AnsiConsole.Clear();
+        }
+
+        public Table JobCard(Car car)
+        {
+            var table = new Table()
+                .Border(TableBorder.Rounded)
+                .BorderColor(Color.Blue)
+                .Title($"[yellow]JOB CARD: {car.Manufacturer} {car.VehicleName}[/]")
+                .AddColumn("Component")
+                .AddColumn("Condition")
+                .AddColumn("Technical Details");
+
+            foreach (var part in car.Parts)
+            {
+                string conditionColour = part.Condition switch
+                {
+                    < 30 => "red",
+                    < 70 => "yellow",
+                    _ => "green"
+                };
+
+                table.AddRow(
+                    part.Name,
+                    $"[{conditionColour}]{part.Condition}%[/]",
+                    part.GetStatusReport());
+            }
+
+            return table;
         }
     }
 }
