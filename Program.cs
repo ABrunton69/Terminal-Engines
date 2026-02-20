@@ -9,27 +9,90 @@ namespace Terminal_Engines
 {
     internal class Program
     {
+        private static GameUtilities gameUtilities = new GameUtilities();
+
         public static void Main(string[] args)
         {
-            GameUtilities gameUtilities = new GameUtilities();
 
             gameUtilities.BootGame();
 
-            // Set player account
             Account CurrentAccount = new Account();
             CurrentAccount.credits = 1000;
 
-            // Set player account username
             var username = AnsiConsole.Ask<string>("What's your [green]username[/]?");
             CurrentAccount.UserName = username;
 
-            // Set player account first name
             var name = AnsiConsole.Ask<string>("What's your [green]first name[/]?");
             CurrentAccount.Name = name;
 
-            Car FirstCar = GetTestVehicles().FirstOrDefault();
+            List<Car> ShopQueue = GetTestVehicles();
 
-            AnsiConsole.Write(gameUtilities.JobCard(FirstCar));
+            while (ShopQueue.Count > 0)
+            {
+                AnsiConsole.Clear();
+                AnsiConsole.Write(new Rule("[yellow]TERMINAL ENGINES GARAGE[/]").LeftJustified());
+
+                var currentCar = AnsiConsole.Prompt(
+                    new SelectionPrompt<Car>()
+                        .Title("Which vehicle would you like to [green]accept[/] into the shop?")
+                        .AddChoices(ShopQueue)
+                        .UseConverter(c => $"{c.Manufacturer} {c.VehicleName} ({c.Parts.Count} parts)")
+                    );
+
+                BeginRepairWork(currentCar);
+
+                ShopQueue.Remove(currentCar);
+                AnsiConsole.MarkupLine("[bold green]Vehicle Complete! Customer paid and left.[/]");
+                Thread.Sleep(2000);
+            }
+            AnsiConsole.MarkupLine("[yellow]No more cars in the queue. Closing shop![/]");
+        }
+
+        public static void BeginRepairWork(Car car)
+        {
+            bool workingOnCar = true;
+
+            while (workingOnCar)
+            {
+                AnsiConsole.Clear();
+                AnsiConsole.Write(gameUtilities.JobCard(car));
+
+                var choices = new List<string> { "Finish Job" };
+                choices.AddRange(car.Parts.Select(p => $"Fix {p.Name}"));
+
+                var action = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("What would you like to do?")
+                        .AddChoices(choices)
+                );
+
+                if (action == "Finish Job")
+                {
+                    if (car.IsJobComplete)
+                    {
+                        workingOnCar = false;
+                    }
+                    else
+                    {
+                        AnsiConsole.MarkupLine("[red]You can't finish yet! Parts are still broken.[/]");
+                        Thread.Sleep(1500);
+                    }
+                }
+                else
+                {
+                    string partName = action.Replace("Fix ", "");
+                    var selectedPart = car.Parts.FirstOrDefault(p => p.Name == partName);
+
+                    if (selectedPart != null)
+                    {
+                        AnsiConsole.Status()
+                            .Start($"Repairing {selectedPart.Name}...", ctx => {
+                                Thread.Sleep(1000); 
+                                selectedPart.Repair(100f);
+                            });
+                    }
+                }
+            }
         }
 
         public static List<Car> GetTestVehicles()
