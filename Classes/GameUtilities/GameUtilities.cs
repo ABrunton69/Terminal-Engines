@@ -42,23 +42,23 @@ namespace Terminal_Engines.Classes.ShopClasses
                 .Border(TableBorder.Rounded)
                 .BorderColor(Color.Blue)
                 .Title($"[yellow]JOB CARD: {car.Manufacturer} {car.VehicleName}[/]")
+                .AddColumn("Status") 
                 .AddColumn("Component")
                 .AddColumn("Condition")
                 .AddColumn("Technical Details");
 
             foreach (var part in car.Parts)
             {
-                string conditionColour = part.Condition switch
-                {
-                    < 30 => "red",
-                    < 70 => "yellow",
-                    _ => "green"
-                };
+                string statusIcon = part.IsFine ? "[green]✔ PASS[/]" : "[red]✖ FAIL[/]";
+
+                string conditionColour = part.Condition >= 85f ? "green" : (part.Condition < 50f ? "red" : "yellow");
 
                 table.AddRow(
+                    statusIcon,
                     part.Name,
                     $"[{conditionColour}]{part.Condition}%[/]",
-                    part.GetStatusReport());
+                    part.GetStatusReport()
+                );
             }
 
             return table;

@@ -57,39 +57,99 @@ namespace Terminal_Engines
                 AnsiConsole.Clear();
                 AnsiConsole.Write(gameUtilities.JobCard(car));
 
-                var choices = new List<string> { "Finish Job" };
-                choices.AddRange(car.Parts.Select(p => $"Fix {p.Name}"));
+                var choices = new List<string> { "[bold green]Submit Vehicle to Customer[/]" };
+                choices.AddRange(car.Parts.Select(p => p.Name));
 
-                var action = AnsiConsole.Prompt(
+                var mainAction = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                        .Title("What would you like to do?")
+                        .Title("\nSelect a component to work on, or return the car:")
                         .AddChoices(choices)
                 );
 
-                if (action == "Finish Job")
+                if (mainAction == "[bold green]Submit Vehicle to Customer[/]")
                 {
-                    if (car.IsJobComplete)
+                    var brokenParts = car.Parts.Where(p => !p.IsFine).ToList();
+
+                    if (brokenParts.Any())
                     {
-                        workingOnCar = false;
+                        AnsiConsole.MarkupLine("\n[bold red]The customer is furious![/]");
+                        AnsiConsole.MarkupLine("They checked the car and found the following issues were ignored:");
+
+                        foreach (var part in brokenParts)
+                        {
+                            AnsiConsole.MarkupLine($"- [yellow]{part.Name}[/]: {part.GetStatusReport()}");
+                        }
+
+                        AnsiConsole.MarkupLine("\n[red]You lost shop reputation and received NO payment for this job![/]");
                     }
                     else
                     {
-                        AnsiConsole.MarkupLine("[red]You can't finish yet! Parts are still broken.[/]");
-                        Thread.Sleep(1500);
+                        AnsiConsole.MarkupLine("\n[bold green]The customer is thrilled![/]");
+                        AnsiConsole.MarkupLine("The car runs perfectly. You got paid!");
+                    }
+
+                    AnsiConsole.MarkupLine("\n[grey]Press any key to return to the garage...[/]");
+                    Console.ReadKey(true);
+
+                    workingOnCar = false; 
+                    continue;
+                }
+
+                var selectedPart = car.Parts.First(p => p.Name == mainAction);
+
+                if (selectedPart is Wheel wheel)
+                {
+                    var action = AnsiConsole.Prompt(
+                        new SelectionPrompt<string>()
+                            .Title($"What do you want to do with {wheel.Name}?")
+                            .AddChoices("Repair Tread", "Replace Wheel", "Inflate Tire", "Back")
+                    );
+
+                    if (action == "Repair Tread")
+                    {
+                        if (wheel.IsBent)
+                        {
+                            AnsiConsole.MarkupLine("[red]Cannot repair tread! The rim is bent and must be replaced.[/]");
+                            Thread.Sleep(2000);
+                        }
+                        else
+                        {
+                            wheel.Repair(100f);
+                        }
+                    }
+                    else if (action == "Replace Wheel")
+                    {
+                        AnsiConsole.Status().Start("Replacing wheel...", ctx => { Thread.Sleep(1000); });
+                        wheel.Replace();
+                    }
+                    else if (action == "Inflate Tire")
+                    {
+                        float targetPsi = AnsiConsole.Ask<float>("Enter target PSI:");
+                        wheel.InFlate(targetPsi);
                     }
                 }
-                else
+                else if (selectedPart is Engine engine)
                 {
-                    string partName = action.Replace("Fix ", "");
-                    var selectedPart = car.Parts.FirstOrDefault(p => p.Name == partName);
+                    var action = AnsiConsole.Prompt(
+                        new SelectionPrompt<string>()
+                            .Title($"What do you want to do with {engine.Name}?")
+                            .AddChoices("Repair Core Engine", "Fill Oil", "Recharge Battery", "Back")
+                    );
 
-                    if (selectedPart != null)
+                    if (action == "Repair Core Engine")
                     {
-                        AnsiConsole.Status()
-                            .Start($"Repairing {selectedPart.Name}...", ctx => {
-                                Thread.Sleep(1000); 
-                                selectedPart.Repair(100f);
-                            });
+                        AnsiConsole.Status().Start("Repairing engine block...", ctx => { Thread.Sleep(1000); });
+                        engine.Repair(100f);
+                    }
+                    else if (action == "Fill Oil")
+                    {
+                        AnsiConsole.Status().Start("Filling oil...", ctx => { Thread.Sleep(1000); });
+                        engine.FillOil();
+                    }
+                    else if (action == "Recharge Battery")
+                    {
+                        AnsiConsole.Status().Start("Hooking up battery charger...", ctx => { Thread.Sleep(1000); });
+                        engine.RechargeBattery();
                     }
                 }
             }

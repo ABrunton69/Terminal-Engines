@@ -14,7 +14,7 @@ namespace Terminal_Engines.Classes.Vehicles
 
         public List<VehiclePart> Parts { get; set; } = new();
 
-        public bool IsJobComplete => Parts.All(p => p.Condition >= 100);
+        public bool IsJobComplete => Parts.All(p => p.IsFine);
 
         public void InitializeCar(Engine engine, List<Wheel> wheels)
         {

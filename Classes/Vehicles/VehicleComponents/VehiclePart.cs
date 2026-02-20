@@ -17,5 +17,7 @@ namespace Terminal_Engines.Classes.Vehicles.VehicleComponents
             Condition = Math.Clamp(Condition + amount, 0, 100);
         }
         public abstract string GetStatusReport();
+
+        public virtual bool IsFine => Condition >= 85f;
     }
 }

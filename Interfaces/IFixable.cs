@@ -12,5 +12,6 @@ namespace Terminal_Engines.Interfaces
         float Condition { get; set; } 
         void Repair(float amount);
         string GetStatusReport(); 
+        bool IsFine { get; }
     }
 }
