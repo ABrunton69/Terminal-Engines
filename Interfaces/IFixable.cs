@@ -13,5 +13,8 @@ namespace Terminal_Engines.Interfaces
         void Repair(float amount);
         string GetStatusReport(); 
         bool IsFine { get; }
+
+        IEnumerable<string> GetActions();
+        void ExecuteAction(string action);
     }
 }

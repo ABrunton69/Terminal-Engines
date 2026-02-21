@@ -19,5 +19,9 @@ namespace Terminal_Engines.Classes.Vehicles.VehicleComponents
         public abstract string GetStatusReport();
 
         public virtual bool IsFine => Condition >= 85f;
+
+        public virtual IEnumerable<string> GetActions() => new List<string> { "Back" };
+        public abstract void ExecuteAction(string action);
+
     }
 }
