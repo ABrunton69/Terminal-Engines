@@ -12,12 +12,13 @@ namespace Terminal_Engines
     {
         private static GameUtilities gameUtilities = new GameUtilities();
         private static Account? CurrentAccount;
+        private static List<Car>? ShopQueue;
 
         public static void Main(string[] args)
         {
             // Initialise ShopManager for car queue
             var shopManager = new ShopManager();
-            List<Car> ShopQueue = shopManager.LoadShopQueue("C:\\Users\\amdru\\Desktop\\Terminal-Engines\\Data\\Vehicles.json");
+            ShopQueue = shopManager.LoadShopQueue("C:\\Users\\amdru\\Desktop\\Terminal-Engines\\Data\\Vehicles.json");
 
             gameUtilities.BootGame();
 
@@ -27,11 +28,16 @@ namespace Terminal_Engines
             var username = AnsiConsole.Ask<string>("What's your [green]username[/]?");
             CurrentAccount.UserName = username;
 
-            while (ShopQueue.Count > 0)
+            AcceptVehicleIntoShop();
+        }
+
+        public static void AcceptVehicleIntoShop()
+        {
+            while (ShopQueue?.Count > 0)
             {
 
                 AnsiConsole.Clear();
-                AnsiConsole.Write(new Rule($"[yellow]TERMINAL ENGINES GARAGE | LOGGED IN AS[/] [green]{CurrentAccount.UserName}[/] | [blue]{CurrentAccount.credits}cr[/]").LeftJustified());
+                AnsiConsole.Write(new Rule($"[yellow]TERMINAL ENGINES GARAGE | LOGGED IN AS[/] [green]{CurrentAccount?.UserName}[/] | [blue]{CurrentAccount?.credits}cr[/]").LeftJustified());
 
                 var currentCar = AnsiConsole.Prompt(
                     new SelectionPrompt<Car>()
