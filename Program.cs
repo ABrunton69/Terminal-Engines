@@ -11,6 +11,7 @@ namespace Terminal_Engines
     internal class Program
     {
         private static GameUtilities gameUtilities = new GameUtilities();
+        private static Account? CurrentAccount;
 
         public static void Main(string[] args)
         {
@@ -20,7 +21,7 @@ namespace Terminal_Engines
 
             gameUtilities.BootGame();
 
-            Account CurrentAccount = new Account();
+            CurrentAccount = new Account();
             CurrentAccount.credits = 1000;
 
             var username = AnsiConsole.Ask<string>("What's your [green]username[/]?");
@@ -28,8 +29,9 @@ namespace Terminal_Engines
 
             while (ShopQueue.Count > 0)
             {
+
                 AnsiConsole.Clear();
-                AnsiConsole.Write(new Rule("[yellow]TERMINAL ENGINES GARAGE[/]").LeftJustified());
+                AnsiConsole.Write(new Rule($"[yellow]TERMINAL ENGINES GARAGE | LOGGED IN AS[/] [green]{CurrentAccount.UserName}[/] | [blue]{CurrentAccount.credits}cr[/]").LeftJustified());
 
                 var currentCar = AnsiConsole.Prompt(
                     new SelectionPrompt<Car>()
@@ -41,7 +43,6 @@ namespace Terminal_Engines
                 BeginRepairWork(currentCar);
 
                 ShopQueue.Remove(currentCar);
-                AnsiConsole.MarkupLine("[bold green]Vehicle Complete! Customer paid and left.[/]");
                 Thread.Sleep(2000);
             }
             AnsiConsole.MarkupLine("[yellow]No more cars in the queue. Closing shop![/]");
@@ -83,8 +84,11 @@ namespace Terminal_Engines
                     }
                     else
                     {
+                        var rnd = new Random();
+                        var pay = rnd.Next(250, 1001);
                         AnsiConsole.MarkupLine("\n[bold green]The customer is thrilled![/]");
-                        AnsiConsole.MarkupLine("The car runs perfectly. You got paid!");
+                        AnsiConsole.MarkupLine($"The car runs perfectly. You got paid {pay}cr");
+                        CurrentAccount!.credits += pay;
                     }
 
                     AnsiConsole.MarkupLine("\n[grey]Press any key to return to the garage...[/]");

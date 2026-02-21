@@ -63,5 +63,13 @@ namespace Terminal_Engines.Classes.ShopClasses
 
             return table;
         }
+
+        public Panel DisplayInfoPanel()
+        {
+            var infoPanel = new Panel("Right-aligned header")
+                .Header("Right", Justify.Right);
+
+            return infoPanel;
+        }
     }
 }

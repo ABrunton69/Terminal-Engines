@@ -47,26 +47,26 @@
     "Wheels": [
       {
         "Name": "Alloy Wheel 1",
-        "Condition": 100,
-        "TirePressure": 35,
-        "IsBent": false
+        "Condition": 80,
+        "TirePressure": 32,
+        "IsBent": true
       },
       {
         "Name": "Alloy Wheel 2",
         "Condition": 100,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
         "Name": "Alloy Wheel 3",
         "Condition": 100,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
         "Name": "Alloy Wheel 4",
         "Condition": 100,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       }
     ]
@@ -108,37 +108,37 @@
     ]
   },
   {
-    "VehicleName": "Model 3",
-    "Manufacturer": "Tesla",
+    "VehicleName": "Camry",
+    "Manufacturer": "Toyota",
     "Engine": {
-      "Name": "Dual Motor Electric",
-      "Condition": 99,
-      "OilLevel": 100,
-      "BatteryCharge": 42
+      "Name": "Inline-4",
+      "Condition": 70,
+      "OilLevel": 40,
+      "BatteryCharge": 90
     },
     "Wheels": [
       {
-        "Name": "Aero Wheel FL",
-        "Condition": 95,
-        "TirePressure": 40,
+        "Name": "Stock FL",
+        "Condition": 90,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
-        "Name": "Aero Wheel FR",
-        "Condition": 92,
-        "TirePressure": 40,
+        "Name": "Stock FR",
+        "Condition": 90,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
-        "Name": "Aero Wheel RL",
-        "Condition": 98,
-        "TirePressure": 42,
+        "Name": "Stock RL",
+        "Condition": 90,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
-        "Name": "Aero Wheel RR",
-        "Condition": 98,
-        "TirePressure": 42,
+        "Name": "Stock RR",
+        "Condition": 90,
+        "TirePressure": 31,
         "IsBent": false
       }
     ]
@@ -192,25 +192,25 @@
       {
         "Name": "Offroad FL",
         "Condition": 65,
-        "TirePressure": 18,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Offroad FR",
         "Condition": 65,
-        "TirePressure": 18,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Offroad RL",
         "Condition": 60,
-        "TirePressure": 18,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Offroad RR",
         "Condition": 60,
-        "TirePressure": 18,
+        "TirePressure": 31,
         "IsBent": false
       }
     ]
@@ -220,7 +220,7 @@
     "Manufacturer": "BMW",
     "Engine": {
       "Name": "S58 Straight-Six",
-      "Condition": 92,
+      "Condition": 80,
       "OilLevel": 85,
       "BatteryCharge": 90
     },
@@ -240,13 +240,13 @@
       {
         "Name": "M-Sport 3",
         "Condition": 95,
-        "TirePressure": 35,
+        "TirePressure": 33,
         "IsBent": false
       },
       {
         "Name": "M-Sport 4",
         "Condition": 95,
-        "TirePressure": 35,
+        "TirePressure": 33,
         "IsBent": false
       }
     ]
@@ -292,7 +292,7 @@
     "Manufacturer": "Mercedes-Benz",
     "Engine": {
       "Name": "M264 Turbo 4",
-      "Condition": 96,
+      "Condition": 80,
       "OilLevel": 95,
       "BatteryCharge": 100
     },
@@ -300,25 +300,25 @@
       {
         "Name": "Luxury FL",
         "Condition": 100,
-        "TirePressure": 34,
+        "TirePressure": 33,
         "IsBent": false
       },
       {
         "Name": "Luxury FR",
         "Condition": 100,
-        "TirePressure": 34,
+        "TirePressure": 33,
         "IsBent": false
       },
       {
         "Name": "Luxury RL",
         "Condition": 100,
-        "TirePressure": 34,
+        "TirePressure": 33,
         "IsBent": false
       },
       {
         "Name": "Luxury RR",
         "Condition": 100,
-        "TirePressure": 34,
+        "TirePressure": 33,
         "IsBent": false
       }
     ]
@@ -336,25 +336,25 @@
       {
         "Name": "Steelie 1",
         "Condition": 90,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
         "Name": "Steelie 2",
         "Condition": 90,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
         "Name": "Steelie 3",
         "Condition": 90,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
         "Name": "Steelie 4",
         "Condition": 90,
-        "TirePressure": 35,
+        "TirePressure": 32,
         "IsBent": false
       }
     ]
@@ -372,61 +372,61 @@
       {
         "Name": "Gold BBS FL",
         "Condition": 80,
-        "TirePressure": 30,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Gold BBS FR",
         "Condition": 80,
-        "TirePressure": 30,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Gold BBS RL",
         "Condition": 80,
-        "TirePressure": 30,
+        "TirePressure": 31,
         "IsBent": false
       },
       {
         "Name": "Gold BBS RR",
         "Condition": 80,
-        "TirePressure": 30,
+        "TirePressure": 31,
         "IsBent": false
       }
     ]
   },
   {
-    "VehicleName": "Chiron",
-    "Manufacturer": "Bugatti",
+    "VehicleName": "Corolla",
+    "Manufacturer": "Toyota",
     "Engine": {
-      "Name": "8.0L W16 Quad-Turbo",
-      "Condition": 100,
+      "Name": "DOHC 16-Valve",
+      "Condition": 95,
       "OilLevel": 98,
       "BatteryCharge": 95
     },
     "Wheels": [
       {
-        "Name": "Class 1 FL",
-        "Condition": 100,
-        "TirePressure": 44,
+        "Name": "Standard FL",
+        "Condition": 70,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
-        "Name": "Class 1 FR",
+        "Name": "Standard FR",
         "Condition": 100,
-        "TirePressure": 44,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
-        "Name": "Class 1 RL",
+        "Name": "Standard RL",
         "Condition": 100,
-        "TirePressure": 44,
+        "TirePressure": 32,
         "IsBent": false
       },
       {
-        "Name": "Class 1 RR",
+        "Name": "Standard RR",
         "Condition": 100,
-        "TirePressure": 44,
+        "TirePressure": 32,
         "IsBent": false
       }
     ]
