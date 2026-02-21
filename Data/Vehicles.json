@@ -1,0 +1,434 @@
+[
+  {
+    "VehicleName": "Civic",
+    "Manufacturer": "Honda",
+    "Engine": {
+      "Name": "VTEC Engine",
+      "Condition": 45,
+      "OilLevel": 10,
+      "BatteryCharge": 80
+    },
+    "Wheels": [
+      {
+        "Name": "Front Left Wheel",
+        "Condition": 20,
+        "TirePressure": 15,
+        "IsBent": true
+      },
+      {
+        "Name": "Front Right Wheel",
+        "Condition": 90,
+        "TirePressure": 32,
+        "IsBent": false
+      },
+      {
+        "Name": "Rear Left Wheel",
+        "Condition": 85,
+        "TirePressure": 30,
+        "IsBent": false
+      },
+      {
+        "Name": "Rear Right Wheel",
+        "Condition": 88,
+        "TirePressure": 31,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "911",
+    "Manufacturer": "Porsche",
+    "Engine": {
+      "Name": "Flat-Six Engine",
+      "Condition": 95,
+      "OilLevel": 90,
+      "BatteryCharge": 5
+    },
+    "Wheels": [
+      {
+        "Name": "Alloy Wheel 1",
+        "Condition": 100,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Alloy Wheel 2",
+        "Condition": 100,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Alloy Wheel 3",
+        "Condition": 100,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Alloy Wheel 4",
+        "Condition": 100,
+        "TirePressure": 35,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Land Cruiser",
+    "Manufacturer": "Toyota",
+    "Engine": {
+      "Name": "V8 Turbo Diesel",
+      "Condition": 88,
+      "OilLevel": 75,
+      "BatteryCharge": 92
+    },
+    "Wheels": [
+      {
+        "Name": "Front Left",
+        "Condition": 70,
+        "TirePressure": 28,
+        "IsBent": false
+      },
+      {
+        "Name": "Front Right",
+        "Condition": 72,
+        "TirePressure": 29,
+        "IsBent": false
+      },
+      {
+        "Name": "Rear Left",
+        "Condition": 75,
+        "TirePressure": 28,
+        "IsBent": false
+      },
+      {
+        "Name": "Rear Right",
+        "Condition": 74,
+        "TirePressure": 28,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Model 3",
+    "Manufacturer": "Tesla",
+    "Engine": {
+      "Name": "Dual Motor Electric",
+      "Condition": 99,
+      "OilLevel": 100,
+      "BatteryCharge": 42
+    },
+    "Wheels": [
+      {
+        "Name": "Aero Wheel FL",
+        "Condition": 95,
+        "TirePressure": 40,
+        "IsBent": false
+      },
+      {
+        "Name": "Aero Wheel FR",
+        "Condition": 92,
+        "TirePressure": 40,
+        "IsBent": false
+      },
+      {
+        "Name": "Aero Wheel RL",
+        "Condition": 98,
+        "TirePressure": 42,
+        "IsBent": false
+      },
+      {
+        "Name": "Aero Wheel RR",
+        "Condition": 98,
+        "TirePressure": 42,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Mustang GT",
+    "Manufacturer": "Ford",
+    "Engine": {
+      "Name": "Coyote V8",
+      "Condition": 60,
+      "OilLevel": 30,
+      "BatteryCharge": 65
+    },
+    "Wheels": [
+      {
+        "Name": "Performance FL",
+        "Condition": 40,
+        "TirePressure": 22,
+        "IsBent": true
+      },
+      {
+        "Name": "Performance FR",
+        "Condition": 85,
+        "TirePressure": 32,
+        "IsBent": false
+      },
+      {
+        "Name": "Performance RL",
+        "Condition": 50,
+        "TirePressure": 30,
+        "IsBent": false
+      },
+      {
+        "Name": "Performance RR",
+        "Condition": 55,
+        "TirePressure": 30,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Wrangler",
+    "Manufacturer": "Jeep",
+    "Engine": {
+      "Name": "Pentastar V6",
+      "Condition": 78,
+      "OilLevel": 60,
+      "BatteryCharge": 85
+    },
+    "Wheels": [
+      {
+        "Name": "Offroad FL",
+        "Condition": 65,
+        "TirePressure": 18,
+        "IsBent": false
+      },
+      {
+        "Name": "Offroad FR",
+        "Condition": 65,
+        "TirePressure": 18,
+        "IsBent": false
+      },
+      {
+        "Name": "Offroad RL",
+        "Condition": 60,
+        "TirePressure": 18,
+        "IsBent": false
+      },
+      {
+        "Name": "Offroad RR",
+        "Condition": 60,
+        "TirePressure": 18,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "M3",
+    "Manufacturer": "BMW",
+    "Engine": {
+      "Name": "S58 Straight-Six",
+      "Condition": 92,
+      "OilLevel": 85,
+      "BatteryCharge": 90
+    },
+    "Wheels": [
+      {
+        "Name": "M-Sport 1",
+        "Condition": 90,
+        "TirePressure": 33,
+        "IsBent": false
+      },
+      {
+        "Name": "M-Sport 2",
+        "Condition": 88,
+        "TirePressure": 33,
+        "IsBent": false
+      },
+      {
+        "Name": "M-Sport 3",
+        "Condition": 95,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "M-Sport 4",
+        "Condition": 95,
+        "TirePressure": 35,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Golf GTI",
+    "Manufacturer": "Volkswagen",
+    "Engine": {
+      "Name": "EA888 Inline-4",
+      "Condition": 82,
+      "OilLevel": 50,
+      "BatteryCharge": 70
+    },
+    "Wheels": [
+      {
+        "Name": "Austin FL",
+        "Condition": 75,
+        "TirePressure": 32,
+        "IsBent": false
+      },
+      {
+        "Name": "Austin FR",
+        "Condition": 30,
+        "TirePressure": 10,
+        "IsBent": true
+      },
+      {
+        "Name": "Austin RL",
+        "Condition": 80,
+        "TirePressure": 32,
+        "IsBent": false
+      },
+      {
+        "Name": "Austin RR",
+        "Condition": 80,
+        "TirePressure": 32,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "C-Class",
+    "Manufacturer": "Mercedes-Benz",
+    "Engine": {
+      "Name": "M264 Turbo 4",
+      "Condition": 96,
+      "OilLevel": 95,
+      "BatteryCharge": 100
+    },
+    "Wheels": [
+      {
+        "Name": "Luxury FL",
+        "Condition": 100,
+        "TirePressure": 34,
+        "IsBent": false
+      },
+      {
+        "Name": "Luxury FR",
+        "Condition": 100,
+        "TirePressure": 34,
+        "IsBent": false
+      },
+      {
+        "Name": "Luxury RL",
+        "Condition": 100,
+        "TirePressure": 34,
+        "IsBent": false
+      },
+      {
+        "Name": "Luxury RR",
+        "Condition": 100,
+        "TirePressure": 34,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Defender",
+    "Manufacturer": "Land Rover",
+    "Engine": {
+      "Name": "P400 i6",
+      "Condition": 85,
+      "OilLevel": 80,
+      "BatteryCharge": 15
+    },
+    "Wheels": [
+      {
+        "Name": "Steelie 1",
+        "Condition": 90,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Steelie 2",
+        "Condition": 90,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Steelie 3",
+        "Condition": 90,
+        "TirePressure": 35,
+        "IsBent": false
+      },
+      {
+        "Name": "Steelie 4",
+        "Condition": 90,
+        "TirePressure": 35,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Impreza STI",
+    "Manufacturer": "Subaru",
+    "Engine": {
+      "Name": "EJ25 Boxer",
+      "Condition": 55,
+      "OilLevel": 20,
+      "BatteryCharge": 40
+    },
+    "Wheels": [
+      {
+        "Name": "Gold BBS FL",
+        "Condition": 80,
+        "TirePressure": 30,
+        "IsBent": false
+      },
+      {
+        "Name": "Gold BBS FR",
+        "Condition": 80,
+        "TirePressure": 30,
+        "IsBent": false
+      },
+      {
+        "Name": "Gold BBS RL",
+        "Condition": 80,
+        "TirePressure": 30,
+        "IsBent": false
+      },
+      {
+        "Name": "Gold BBS RR",
+        "Condition": 80,
+        "TirePressure": 30,
+        "IsBent": false
+      }
+    ]
+  },
+  {
+    "VehicleName": "Chiron",
+    "Manufacturer": "Bugatti",
+    "Engine": {
+      "Name": "8.0L W16 Quad-Turbo",
+      "Condition": 100,
+      "OilLevel": 98,
+      "BatteryCharge": 95
+    },
+    "Wheels": [
+      {
+        "Name": "Class 1 FL",
+        "Condition": 100,
+        "TirePressure": 44,
+        "IsBent": false
+      },
+      {
+        "Name": "Class 1 FR",
+        "Condition": 100,
+        "TirePressure": 44,
+        "IsBent": false
+      },
+      {
+        "Name": "Class 1 RL",
+        "Condition": 100,
+        "TirePressure": 44,
+        "IsBent": false
+      },
+      {
+        "Name": "Class 1 RR",
+        "Condition": 100,
+        "TirePressure": 44,
+        "IsBent": false
+      }
+    ]
+  }
+]

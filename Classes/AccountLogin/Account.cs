@@ -9,7 +9,6 @@ namespace Terminal_Engines.Classes.AccountLogin
     public class Account
     {
         public string? UserName { get; set; }
-        public string? Name { get; set; }
         public decimal credits { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using Terminal_Engines.Classes.AccountLogin;
 using Terminal_Engines.Classes.ShopClasses;
 using Terminal_Engines.Classes.Vehicles;
 using Terminal_Engines.Classes.Vehicles.VehicleComponents;
+using Terminal_Engines.Services;
 
 namespace Terminal_Engines
 {
@@ -13,6 +14,9 @@ namespace Terminal_Engines
 
         public static void Main(string[] args)
         {
+            // Initialise ShopManager for car queue
+            var shopManager = new ShopManager();
+            List<Car> ShopQueue = shopManager.LoadShopQueue("C:\\Users\\amdru\\Desktop\\Terminal-Engines\\Data\\Vehicles.json");
 
             gameUtilities.BootGame();
 
@@ -21,11 +25,6 @@ namespace Terminal_Engines
 
             var username = AnsiConsole.Ask<string>("What's your [green]username[/]?");
             CurrentAccount.UserName = username;
-
-            var name = AnsiConsole.Ask<string>("What's your [green]first name[/]?");
-            CurrentAccount.Name = name;
-
-            List<Car> ShopQueue = GetTestVehicles();
 
             while (ShopQueue.Count > 0)
             {
